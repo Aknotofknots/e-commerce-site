@@ -23,18 +23,22 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700"
       rel="stylesheet"
     />
     <title>Shopping App</title>
     <style>
+      /* General styling */
       html {
+        font-family: 'Roboto', 'Times New Roman', sans-serif;
         font-size: 10px;
         height: 100%;
         width: 100%;
+        z-index: -2;
       }
 
       body {
+        z-index: inherit;
         height: inherit;
         width: inherit;
         -webkit-font-smoothing: antialiased;
@@ -42,6 +46,8 @@
       }
 
       #root {
+        position: relative;
+        z-index: inherit;
         width: inherit;
         height: inherit;
         display: flex;
@@ -61,6 +67,16 @@
       h5,
       h6 {
         margin: 0;
+        font-size: inherit;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
       }
     </style>
   </head>

@@ -12,6 +12,9 @@ const InputContainer = styled.span`
   padding: 0 20px;
 `;
 const EmailInput = styled.input`
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: italic;
   display: inline-block;
   width: 60%;
   height: 100%;
@@ -20,24 +23,25 @@ const EmailInput = styled.input`
   padding-left: 10px;
 `;
 const SubscribeButton = styled.input`
+  font-size: 1.2rem;
+  font-weight: 500;
   display: inline-block;
   width: 40%;
   height: 100%;
-  background: #132747;
-  border: 2px solid #132747;
+  background: #1a3459;
+  border: 2px solid #1a3459;
   color: #fff;
   padding: 0;
+  letter-spacing: 1px;
 `;
-
-export default class SubscribeForm extends Component {
-  constructor(props) {
-    super(props);
-    this.form = React.createRef();
-  }
+class SubscribeForm extends Component {
+  //This components is prepared for email submission
 
   state = {
     email: ''
   };
+
+  subscribeForm = React.createRef();
 
   handleUserInput = e => {
     const email = e.target.value;
@@ -46,23 +50,23 @@ export default class SubscribeForm extends Component {
 
   handleSubmitForm = e => {
     e.preventDefault();
-
-    //make a fetch request here
-    //run this.form.rest() lastly to make the field go blank
+    console.log('event', e);
+    this.subscribeForm.current.reset();
   };
 
   render() {
-    const { email } = this.state.email;
-
     return (
-      <form onSubmit={this.handleSubmitForm} style={{ marginBottom: '30px' }}>
+      <form
+        ref={this.subscribeForm}
+        onSubmit={this.handleSubmitForm}
+        style={{ marginBottom: '20px' }}
+      >
         <InputContainer>
           <EmailInput
             onChange={this.handleUserInput}
             type="text"
             name="email"
             placeholder="Your email"
-            value={email}
           />
           <SubscribeButton type="submit" value="SUBSCRIBE" />
         </InputContainer>
@@ -70,3 +74,5 @@ export default class SubscribeForm extends Component {
     );
   }
 }
+
+export default SubscribeForm;

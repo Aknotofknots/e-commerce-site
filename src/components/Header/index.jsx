@@ -9,11 +9,13 @@ import {
   animateInputIconOpacity
 } from '../../utils/animations';
 
-const Wrapper = styled.header`
+const Head = styled.header`
   position: fixed;
   width: 100%;
   padding: 0 20px;
-  z-index: 0;
+  z-index: 1;
+  background-color: ${props =>
+    props.isNavigationClicked ? 'transparent' : '#fff'};
 
   h1 {
     font-weight: normal;
@@ -24,7 +26,7 @@ const Wrapper = styled.header`
   section {
     display: inline-block;
     margin: 10px 0;
-    color: ${props => props.isNavigationTapped && '#fff'};
+    color: ${props => props.isNavigationClicked && '#fff'};
   }
 
   .heading {
@@ -49,11 +51,11 @@ const inputHeightAnimation = css`
 `;
 const InputContainer = styled.span`
   position: relative;
-  display: ${props => (props.isNavigationTapped ? 'inline-block' : 'none')};
+  display: ${props => (props.isNavigationClicked ? 'inline-block' : 'none')};
   width: 100%;
   height: 0px;
   margin-top: 0px;
-  ${props => props.isNavigationTapped && inputHeightAnimation};
+  ${props => props.isNavigationClicked && inputHeightAnimation};
 `;
 const SearchInput = styled.input`
   display: inline-block;
@@ -77,30 +79,30 @@ const SearchIconInput = styled.input`
   top: 7px;
   left: 7px;
   opacity: 0;
-  ${props => props.isNavigationTapped && inputIconAnimation};
+  ${props => props.isNavigationClicked && inputIconAnimation};
 `;
 
 const Header = ({
-  handleNavigationTap,
-  isNavigationTapped,
+  handleNavigationClick,
+  isNavigationClicked,
   clickedNavigationItem
 }) => {
   return (
-    <Wrapper
-      onClick={handleNavigationTap}
-      isNavigationTapped={isNavigationTapped}
+    <Head
+      onClick={handleNavigationClick}
+      isNavigationClicked={isNavigationClicked}
     >
       <section className="heading">
         <h1>ETON</h1>
       </section>
       <section className="total">
-        <ShoppingBagIcon isNavigationTapped={isNavigationTapped} /> 0 SEK
+        <ShoppingBagIcon isNavigationClicked={isNavigationClicked} /> 0 SEK
       </section>
       <Divider />
-      <InputContainer isNavigationTapped={isNavigationTapped}>
+      <InputContainer isNavigationClicked={isNavigationClicked}>
         <SearchIconInput
           id="search-icon-input"
-          isNavigationTapped={isNavigationTapped}
+          isNavigationClicked={isNavigationClicked}
           type="image"
           src={SearchIcon}
         />
@@ -108,10 +110,9 @@ const Header = ({
       </InputContainer>
       <Navigation
         clickedNavigationItem={clickedNavigationItem}
-        handleNavigationTap={handleNavigationTap}
-        isNavigationTapped={isNavigationTapped}
+        isNavigationClicked={isNavigationClicked}
       />
-    </Wrapper>
+    </Head>
   );
 };
 

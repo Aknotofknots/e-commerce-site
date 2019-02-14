@@ -4,9 +4,9 @@ import styled from 'styled-components';
 const Nav = styled.nav`
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.2rem;
-  padding: 10px 0;
+  padding: 15px 0;
 
   ul {
     display: flex;
@@ -15,16 +15,16 @@ const Nav = styled.nav`
 
     li:nth-child(${props =>
           props.clickedNavigationItem &&
-          props.isNavigationTapped &&
+          props.isNavigationClicked &&
           props.clickedNavigationItem}) {
       color: #fff;
     }
   }
 `;
-const Navigation = ({ isNavigationTapped, clickedNavigationItem }) => {
+const Navigation = ({ isNavigationClicked, clickedNavigationItem }) => {
   return (
     <Nav
-      isNavigationTapped={isNavigationTapped}
+      isNavigationClicked={isNavigationClicked}
       clickedNavigationItem={clickedNavigationItem}
     >
       <ul>

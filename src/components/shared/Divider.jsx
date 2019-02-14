@@ -9,7 +9,7 @@ const Divider = styled.div`
   background-color: lightgrey;
   padding: 0.6px;
   width: 100%;
-  opacity: 0.3;
+  opacity: 0.6;
   ${({ type, margin }) => type && margin && styles(type, margin)}
 `;
 
