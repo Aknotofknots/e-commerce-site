@@ -17,8 +17,12 @@ const CategoryListContainer = styled.div`
   top: 23vh;
   width: 100%;
   height: 77%;
-  line-height: 20px;
   color: #fff;
+
+  @media screen and (min-width: 600px) {
+    display: flex;
+    top: 37vh;
+  }
 `;
 
 const CategoryList = styled.ul`
@@ -26,6 +30,7 @@ const CategoryList = styled.ul`
   column-fill: 0;
   width: 100%;
   margin-bottom: 50px;
+  line-height: 20px;
 
   &.last {
     column-count: 1;
@@ -40,6 +45,16 @@ const CategoryList = styled.ul`
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 1.4rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .heading,
+    .category {
+      font-size: 1.2rem;
+    }
+    .heading {
+      margin-bottom: 6px;
+    }
   }
 `;
 const backdropHeightAnimation = css`

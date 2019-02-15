@@ -3,13 +3,8 @@ import styled from 'styled-components';
 import UpperSectionLinks from './Links/UpperSectionLinks';
 import LowerSectionLinks from './Links/LowerSectionLinks';
 import SubscribeForm from './SubscribeForm';
-import Facebook from './SocialMediaIcons/Facebook';
-import Pinterest from './SocialMediaIcons/Pinterest';
-import Twitter from './SocialMediaIcons/Twitter';
-import Amex from './CreditCardIcons/Amex';
-import MasterCard from './CreditCardIcons/MasterCard';
-import Visa from './CreditCardIcons/Visa';
-import PayPal from './CreditCardIcons/PayPal';
+import { Facebook, Pinterest, Twitter } from './SocialMediaIcons';
+import { Amex, MasterCard, Visa, PayPal } from './CreditCardIcons';
 import Divider from '../shared/Divider';
 
 const SocialMediaIconContainer = styled.div`

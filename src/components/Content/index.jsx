@@ -18,6 +18,10 @@ const LandingCardContainer = styled.div`
   height: 73%;
   margin-bottom: 30px;
 
+  @media screen and (min-width: 600px) {
+    height: 150%;
+  }
+
   .image-caption {
     font-size: 1.9rem;
     font-family: 'Roboto', sans-serif;
@@ -41,6 +45,10 @@ const OnePictureCardContainer = styled(LandingCardContainer)`
   height: 50%;
   margin-bottom: 0;
 
+  @media screen and (min-width: 600px) {
+    height: 120%;
+  }
+
   .image-caption {
     font-size: 1.8rem;
     margin-top: 15px;
@@ -57,8 +65,12 @@ const OnePictureCardContainer = styled(LandingCardContainer)`
 `;
 const TwoPictureCardContainer = styled(OnePictureCardContainer)`
   padding: 0 20px;
-  height: 50%;
+  height: 45%;
   display: flex;
+
+  @media screen and (min-width: 600px) {
+    height: 90%;
+  }
 
   figure:last-child {
     margin-right: 0;
